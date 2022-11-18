@@ -7,7 +7,7 @@ from regex import calculate
 print("Alfred : ", greet('greetings'))
 
 while True:
-    say = input("You : ")
+    say = input("You : ").lower()
     time.sleep(0.5)
     try:
         if say == "exit" or say == "bye":
@@ -30,6 +30,7 @@ while True:
 
         else:
             sol, exp = calculate(say)
+
             print("Alfred : The answer of {} {} {} = {}".format(exp[0],exp[1],exp[2],sol))
 
 
@@ -38,5 +39,5 @@ while True:
 
 
     except:
-        print("Please ask something else !!!")
+        print("Alfred : Sorry I didn't Understand. Please ask something else !!!")
         pass
