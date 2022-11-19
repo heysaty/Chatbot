@@ -3,7 +3,7 @@ from greetings import Alfred_Response
 from said import User
 import time
 
-from regex import calculate
+from regex import Regex
 
 Alfred = Alfred_Response('greetings')
 print("Alfred : ", Alfred.greet('greetings'))
@@ -12,6 +12,7 @@ while True:
     say = input("You : ").lower()
     Alfred = Alfred_Response(say)
     user = User(say)
+    regex = Regex(say)
 
     time.sleep(0.5)
     try:
@@ -19,7 +20,7 @@ while True:
             print("Alfred : ", Alfred.greet('bye'))
             break
 
-        elif say in user.says()['greet'] :
+        elif say in user.says()['greet']:
             print("Alfred : ", Alfred.greet('greetings'))
 
         elif say in user.says()['how']:
@@ -38,13 +39,8 @@ while True:
             print("Alfred : ", user.emotion(say))
 
         else:
-            sol, exp = calculate(say)
-            print("Alfred : The answer of {} {} {} = {}".format(exp[0],exp[1],exp[2],sol))
-
-
-
-
-
+            sol, exp = regex.calculate(say)
+            print("Alfred : The answer of {} {} {} = {}".format(exp[0], exp[1], exp[2], sol))
 
     except:
         print("Alfred : ", user.emotion(say))

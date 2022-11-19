@@ -25,7 +25,8 @@ class User:
     }
 
     ignore_words = ['i', 'like', 'love', 'to', 'is', 'a', 'want', 'has', 'have', 'as', 'would', 'should',
-                    'very', 'much', 'what', 'add', 'multiply', 'subtract', 'and', 'sum', 'minus', 'addition', 'mul']
+                    'very', 'much', 'what', 'add', 'multiply', 'subtract', 'and', 'sum', 'minus', 'addition',
+                    'mul', 'of', 'alfred']
 
     def emotion(self, say):
 
