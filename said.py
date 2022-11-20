@@ -4,9 +4,10 @@ class User:
         self.say = say
 
     said = {
-        'greet': ['hi', 'hello', 'hey', 'whats up', 'hola'],
+        'greet': ['hi', 'hello', 'hey', 'whats up', 'hola', 'hi alfred', 'hello alfred', 'hey alfred',
+                  'whats up alfred', 'hola alfred'],
         'how': ['how are you'],
-        'good': ['good', 'very good', 'perfect', 'nice'],
+        'good': ['good', 'very good', 'perfect', 'nice', 'i am good', 'i am very good', 'i am happy'],
         'feature': [
             'help',
             'what can you do',
@@ -19,10 +20,12 @@ class User:
             'your name',
             'what is your name',
         ],
-        'calculate': [
-            'wfsf'
-        ]
+
     }
+
+    note = ['remember', 'note', 'write']
+
+    view = ['show', 'view']
 
     ignore_words = ['i', 'like', 'love', 'to', 'is', 'a', 'want', 'has', 'have', 'as', 'would', 'should',
                     'very', 'much', 'what', 'add', 'multiply', 'subtract', 'and', 'sum', 'minus', 'addition',
@@ -38,3 +41,17 @@ class User:
 
     def says(self):
         return self.said
+
+    def remember(self, say):
+        says_lst = self.say.split(" ")
+
+        for word in says_lst:
+            if word in self.note:
+                return True
+
+    def show(self, say):
+        says_lst = self.say.split(' ')
+
+        for word in says_lst:
+            if word in self.view:
+                return True

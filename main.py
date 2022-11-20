@@ -16,7 +16,7 @@ while True:
 
     time.sleep(0.5)
     try:
-        if say == "exit" or say == "bye":
+        if say == "exit" or say == "bye" or say == "bye alfred":
             print("Alfred : ", Alfred.greet('bye'))
             break
 
@@ -35,12 +35,21 @@ while True:
         elif say in user.says()['name']:
             print("Alfred : ", Alfred.greet('name'))
 
-        elif user.emotion(say) is not None:
-            print("Alfred : ", user.emotion(say))
-
-        else:
+        elif say[-1].isdigit() is True:
             sol, exp = regex.calculate(say)
             print("Alfred : The answer of {} {} {} = {}".format(exp[0], exp[1], exp[2], sol))
+
+        elif user.remember(say) is True:
+
+            Alfred.note()
+            print('Alfred : Bravo !!! Your notes have been saved ;)')
+
+        elif user.show(say) is True:
+            print('Alfred : Here are your reminder notes : \n')
+            Alfred.view()
+
+        elif user.emotion(say) is not None:
+            print("Alfred : ", user.emotion(say))
 
     except:
         print("Alfred : ", user.emotion(say))
