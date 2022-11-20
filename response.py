@@ -8,7 +8,9 @@ class Alfred_Response:
 
     responses = {
         "greetings": [
-            "Welcome !!! I am Alfred, How can I help you ;)",
+            "Welcome !!! I am Alfred, How are you ;)",
+            "I am Alfred !!! I am here to help ;)"
+
 
         ],
         "bye": [
@@ -27,7 +29,9 @@ class Alfred_Response:
         'feature': [
             ''' I can do many things....like 
         
-    -> show you current time, date and day
+    -> show you current time
+    -> show you today's date 
+    -> show you today's day
     -> record a note for you
     -> do some calculations for you
                 '''
@@ -36,7 +40,15 @@ class Alfred_Response:
             "They call me Alfred",
             "I usually go by Alfred",
             "My name is the Alfred"
+        ],
+        'coffee': [
+            "That's great! I also love a strong coffee..."
+        ],
+
+        'tea': [
+            "That's great! I also love a warm cup of tea..."
         ]
+
 
     }
 

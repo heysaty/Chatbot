@@ -20,7 +20,7 @@ class User:
             'name',
             'your name',
             'what is your name',
-        ],
+        ]
 
     }
 
@@ -30,7 +30,7 @@ class User:
 
     ignore_words = ['i', 'like', 'love', 'to', 'is', 'a', 'want', 'has', 'have', 'as', 'would', 'should',
                     'very', 'much', 'what', 'add', 'multiply', 'subtract', 'and', 'sum', 'minus', 'addition',
-                    'mul', 'of', 'alfred']
+                    'mul', 'of', 'alfred','drinking']
 
     def emotion(self, say):
 
