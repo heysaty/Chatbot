@@ -1,2 +1,5 @@
  ->  to drink coffee
  ->  hit chest tommorow
+->  to get rid of me
+ ->  wash clothes tommorow
+ ->  i have to push code on github

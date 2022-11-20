@@ -1,12 +1,13 @@
+
 class User:
 
     def __init__(self, say):
         self.say = say
 
     said = {
-        'greet': ['hi', 'hello', 'hey', 'whats up', 'hola', 'hi alfred', 'hello alfred', 'hey alfred',
+        'greet': ['hi', 'hello', 'hey', 'hola', 'hi alfred', 'hello alfred', 'hey alfred',
                   'whats up alfred', 'hola alfred'],
-        'how': ['how are you'],
+        'how': ['how are you', 'whats up'],
         'good': ['good', 'very good', 'perfect', 'nice', 'i am good', 'i am very good', 'i am happy'],
         'feature': [
             'help',
@@ -55,3 +56,27 @@ class User:
         for word in says_lst:
             if word in self.view:
                 return True
+
+    def whattime(self,say):
+        says_lst = self.say.split(' ')
+
+        for word in says_lst:
+            if word == 'time':
+                return True
+
+    def whatdate(self,say):
+        says_lst = self.say.split(' ')
+
+        for word in says_lst:
+            if word == 'date':
+                return True
+
+    def whatday(self, say):
+        says_lst = self.say.split(' ')
+
+        for word in says_lst:
+            if word == 'day':
+                return True
+
+
+

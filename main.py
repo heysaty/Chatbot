@@ -1,4 +1,4 @@
-from greetings import Alfred_Response
+from response import Alfred_Response
 # from said import says, emotion
 from said import User
 import time
@@ -40,7 +40,6 @@ while True:
             print("Alfred : The answer of {} {} {} = {}".format(exp[0], exp[1], exp[2], sol))
 
         elif user.remember(say) is True:
-
             Alfred.note()
             print('Alfred : Bravo !!! Your notes have been saved ;)')
 
@@ -48,7 +47,17 @@ while True:
             print('Alfred : Here are your reminder notes : \n')
             Alfred.view()
 
+        elif user.whattime(say) is True:
+            print('Alfred : Current time is', Alfred.whattime())
+
+        elif user.whatdate(say) is True:
+            print("Alfred : Today's Date is", Alfred.whatdate())
+
+        elif user.whatday(say) is True:
+            print("Alfred : Today's Day is", Alfred.whatday())
+
         elif user.emotion(say) is not None:
+            print('In emotion')
             print("Alfred : ", user.emotion(say))
 
     except:

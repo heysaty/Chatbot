@@ -1,4 +1,5 @@
 import random
+from datetime import datetime
 
 
 class Alfred_Response:
@@ -8,7 +9,7 @@ class Alfred_Response:
     responses = {
         "greetings": [
             "Welcome !!! I am Alfred, How can I help you ;)",
-            "Hello there, I am Alfred What's up !!! "
+
         ],
         "bye": [
             "Bye !!! Nice chatting with you :)",
@@ -26,9 +27,9 @@ class Alfred_Response:
         'feature': [
             ''' I can do many things....like 
         
-    -> tell you about the weather
+    -> show you current time, date and day
     -> record a note for you
-    -> do some calculations 
+    -> do some calculations for you
                 '''
         ],
         'name': [
@@ -43,9 +44,8 @@ class Alfred_Response:
         return random.choice(self.responses[say])
 
     def note(self):
-
         text = self.say.replace('note', '')
-        text = '-> ' + text.replace('remember', '') + '\n'
+        text = ' -> ' + text.replace('remember', '') + '\n'
 
         file = open('notes.txt', 'a')
 
@@ -53,6 +53,14 @@ class Alfred_Response:
         file.close()
 
     def view(self):
-        file = open('notes.txt','r')
+        file = open('notes.txt', 'r')
         print(file.read())
 
+    def whattime(self):
+        return datetime.now().strftime("%H:%M")
+
+    def whatdate(self):
+        return datetime.now().date()
+
+    def whatday(self):
+        return datetime.now().strftime("%A")
