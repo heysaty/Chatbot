@@ -4,3 +4,6 @@
  ->  wash clothes tommorow
  ->  i have to push code on github
  ->  today is monday
+ ->  i have to submit this assignment
+ ->  i to eat eggs in lunch
+ ->  i have to sleep today

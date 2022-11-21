@@ -8,9 +8,7 @@ class Alfred_Response:
 
     responses = {
         "greetings": [
-            "Welcome !!! I am Alfred, How are you ;)",
-            "I am Alfred !!! I am here to help ;)"
-
+            "Hi !!! I am Alfred, Whats Your Name ;)"
 
         ],
         "bye": [
@@ -47,8 +45,22 @@ class Alfred_Response:
 
         'tea': [
             "That's great! I also love a warm cup of tea..."
-        ]
+        ],
+    }
 
+    songs = {
+        'hindi': [
+            'Tum hi ho by Arijit Singh',
+            'Zara Sa by KK',
+            'Mercy by Badshah',
+            'Gumshuda by King'],
+
+        'english': [
+            'See you Again by Charlie Puth',
+            'Lose Youself by Eminem',
+            'Fame by 2Pac',
+            'Bankrupt by Russ'
+        ]
 
     }
 
@@ -76,3 +88,17 @@ class Alfred_Response:
 
     def whatday(self):
         return datetime.now().strftime("%A")
+
+    def thank(self):
+        return "Welcome !!!"
+
+    def song_suggestion(self, say):
+        say_lst = say.split(' ')
+
+        for word in say_lst:
+            if word == 'hindi':
+                print("Alfred : You will love {} ;)".format(random.choice(self.songs['hindi'])))
+
+            if word == 'english':
+                print("Alfred : You will love {} ;)".format(random.choice(self.songs['english'])))
+

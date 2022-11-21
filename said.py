@@ -1,4 +1,3 @@
-
 class User:
 
     def __init__(self, say):
@@ -30,7 +29,10 @@ class User:
 
     ignore_words = ['i', 'like', 'love', 'to', 'is', 'a', 'want', 'has', 'have', 'as', 'would', 'should',
                     'very', 'much', 'what', 'add', 'multiply', 'subtract', 'and', 'sum', 'minus', 'addition',
-                    'mul', 'of', 'alfred','drinking']
+                    'mul', 'of', 'alfred', 'drinking']
+    thank = ['thanks', 'thank you', 'thank you alfred', 'thanks alfred']
+
+    song_suggest = ['suggest', 'recommend']
 
     def emotion(self, say):
 
@@ -57,14 +59,14 @@ class User:
             if word in self.view:
                 return True
 
-    def whattime(self,say):
+    def whattime(self, say):
         says_lst = self.say.split(' ')
 
         for word in says_lst:
             if word == 'time':
                 return True
 
-    def whatdate(self,say):
+    def whatdate(self, say):
         says_lst = self.say.split(' ')
 
         for word in says_lst:
@@ -78,5 +80,16 @@ class User:
             if word == 'day':
                 return True
 
+    def thanks(self, say):
+        says_lst = self.say.split(' ')
 
+        for word in says_lst:
+            if word in self.thank:
+                return True
 
+    def song_suggestions(self, say):
+        says_lst = self.say.split(' ')
+
+        for word in says_lst:
+            if word in self.song_suggest:
+                return True
