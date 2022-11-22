@@ -10,24 +10,23 @@ from config import config
 
 
 # establishing the connection
-conn = psycopg2.connect(
-    database=config.databaseName, user=config.username, password=config.password, host=config.host, port=config.port
-)
-cur = conn.cursor()
+
+
 
 
 
 def insert_text(tablename, speaker, text):
+    conn = psycopg2.connect(
+        database=config.databaseName, user=config.username, password=config.password, host=config.host, port=config.port
+    )
     try:
+        cur=conn.cursor()
         cur.execute(create_table(tablename))
-        conn.commit()
-        cur.close()
     except:
         pass
     finally:
-
-
-
+        conn.commit()
+        cur.close()
         cur_ = conn.cursor()
         cur_.execute(insert_data(tablename, speaker, text))
         conn.commit()

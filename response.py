@@ -40,11 +40,11 @@ class Alfred_Response:
             "My name is the Alfred"
         ],
         'coffee': [
-            "That's great! I also love a strong coffee..."
+            "Thats great! I also love a strong coffee..."
         ],
 
         'tea': [
-            "That's great! I also love a warm cup of tea..."
+            "Thats great! I also love a warm cup of tea..."
         ],
     }
 

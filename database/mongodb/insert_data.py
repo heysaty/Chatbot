@@ -16,5 +16,5 @@ def store_session(user_name, speaker, text):
         'text': text,
         'datetime': datetime.now()
     }
-    print(conversation)
+
     mycollection.insert_one(conversation)

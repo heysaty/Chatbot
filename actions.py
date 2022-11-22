@@ -51,19 +51,19 @@ class Actions:
 
 
                 elif say in user.says()['greet']:
-                    chat = "Alfred : ", Alfred.greet('greetings')
+                    chat = "Alfred : "+ Alfred.greet('greetings')
 
 
                 elif say in user.says()['how']:
-                    chat = "Alfred : ", Alfred.greet('how')
+                    chat = "Alfred : "+Alfred.greet('how')
 
 
 
                 elif say in user.says()['good']:
-                    chat = "Alfred : ", Alfred.greet('good')
+                    chat = "Alfred : "+ Alfred.greet('good')
 
                 elif say in user.says()['feature']:
-                    chat = "Alfred : ", Alfred.greet('feature')
+                    chat = "Alfred : "+Alfred.greet('feature')
 
 
                 elif user.song_suggestions(say) is True:
@@ -86,19 +86,19 @@ class Actions:
 
 
                 elif user.whattime(say) is True:
-                    chat = 'Alfred : Current time is', Alfred.whattime()
+                    chat = 'Alfred : Current time is'+ Alfred.whattime()
 
 
                 elif user.whatdate(say) is True:
-                    chat = "Alfred : Today's Date is", Alfred.whatdate()
+                    chat = "Alfred : Today's Date is"+ Alfred.whatdate()
 
 
                 elif user.whatday(say) is True:
-                    chat = "Alfred : Today's Day is", Alfred.whatday()
+                    chat = "Alfred : Today's Day is"+ Alfred.whatday()
 
 
                 elif say in user.says()['name']:
-                    chat = "Alfred : ", Alfred.greet('name')
+                    chat = "Alfred : " + Alfred.greet('name')
 
 
                 elif say[-1].isdigit() is True:
@@ -124,7 +124,7 @@ class Actions:
 
 
                 elif user.emotion(say) is not None:
-                    chat = "Alfred : ", Alfred.greet(user.emotion(say))
+                    chat = "Alfred : " + Alfred.greet(user.emotion(say))
 
 
 
@@ -135,6 +135,7 @@ class Actions:
             except:
                 print("Alfred : Sorry I didn't Understand. Please ask something else !!!")
 
-                insert_data.store_session(self.name, self.bot, "Sorry I didn't Understand. Please ask something else !!!")
+                insert_data.store_session(self.name, self.bot, "Sorry I didn't Understand. Please ask something else "
+                                                               "!!!")
                 postgresdb.insert_text(self.name, self.bot, "Sorry I didn't Understand. Please ask something else !!!")
                 pass
