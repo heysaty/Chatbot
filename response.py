@@ -78,7 +78,7 @@ class Alfred_Response:
 
     def view(self):
         file = open('notes.txt', 'r')
-        print(file.read())
+        return file.read()
 
     def whattime(self):
         return datetime.now().strftime("%H:%M")
@@ -97,8 +97,8 @@ class Alfred_Response:
 
         for word in say_lst:
             if word == 'hindi':
-                print("Alfred : You will love {} ;)".format(random.choice(self.songs['hindi'])))
+                return "Alfred : You will love {} ;)".format(random.choice(self.songs['hindi']))
 
             if word == 'english':
-                print("Alfred : You will love {} ;)".format(random.choice(self.songs['english'])))
+                return "Alfred : You will love {} ;)".format(random.choice(self.songs['english']))
 
